@@ -1,4 +1,4 @@
-name: containerAction
+name: dockerAction
 
 on:
   push:
@@ -12,11 +12,11 @@ jobs:
       - uses: actions/checkout@v6.0.2
       - run: chmod -x entrypoint.sh
       - uses: ./
-        id: containerAction
+        id: dockerAction
         with:
           num1: 6
           num2: 8
-      - run: echo {{ steps.containerAction.output.result }}
+      - run: echo {{ steps.dockerAction.output.result }}
       - run: cat $GITHUB_WORKSPACE/containerOutput.txt
       - run: cat ${{ github.workspace }}/containerOutput.txt #same method as above
       
