@@ -1,0 +1,23 @@
+name: containerAction
+
+on:
+  push:
+
+
+jobs:
+  container-action:
+    name: Sum of 2 numbers using container action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6.0.2
+      - run: chmod -x entrypoint.sh
+      - uses: ./
+        id: containerAction
+        with:
+          num1: 6
+          num2: 8
+      - run: echo {{ steps.containerAction.output.result }}
+      - run: cat $GITHUB_WORKSPACE/containerOutput.txt
+      - run: cat ${{ github.workspace }}/containerOutput.txt #same method as above
+      
+      
