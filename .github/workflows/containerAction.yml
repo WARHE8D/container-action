@@ -16,7 +16,7 @@ jobs:
         with:
           num1: 6
           num2: 8
-      - run: echo {{ steps.dockerAction.outputs.result }}
+      - run: echo ${{ steps.dockerAction.outputs.result }}
       - run: cat $GITHUB_WORKSPACE/containerOutput.txt
       - run: cat ${{ github.workspace }}/containerOutput.txt #same method as above
       
