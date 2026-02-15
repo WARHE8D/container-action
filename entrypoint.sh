@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-result=$(($1 + $2))
+result=$(($INPUT_NUM1 + $INPUT_NUM2))
 
 echo "result=$result" >> $GITHUB_OUTPUT
 
