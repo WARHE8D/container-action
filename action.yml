@@ -1,0 +1,22 @@
+name: containerAction
+
+description: Add operation using container action
+
+inputs:
+  num1:
+    required: true
+    default: 0
+  num2:
+    required: true
+    default: 0
+
+outputs:
+  result:
+    description: 'Sum of 2 numbers'
+
+runs:
+  using: docker
+  image: 'Dockerfile' #dockerfile from local root dir
+  args:
+    - $${{ inputs.num1 }}
+    - $${{ inputs.num2 }}
