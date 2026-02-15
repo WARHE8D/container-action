@@ -15,7 +15,7 @@ outputs:
     description: 'Sum of 2 numbers'
 
 runs:
-  using: docker
+  using: 'docker'
   image: 'Dockerfile' #dockerfile from local root dir
   args:
     - $${{ inputs.num1 }}
